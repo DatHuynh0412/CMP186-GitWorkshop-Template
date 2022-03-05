@@ -14,25 +14,24 @@ namespace SalaryCalculator
             }
 
             decimal factor = 0;
-
-            // TODO: if employee is Expert, set factor = 3
+          
             switch (employeeType)
             {
                 case EmployeeType.Engineer:
                     factor = 1;
                     break;
-                case EmployeeType.seniorEngineer:
+                case EmployeeType.SeniorEngineer:
                 case EmployeeType.Manager:
-                    factor = 1.5m;
+                    factor = 2m;
                     break
-                        case EmployeeType.SeniorManager:
-                case EmployeeType.Expert:    
+                case EmployeeType.SeniorManager:
+                case EmployeeType.Expert:
                     factor = 3;
                     break;
                 default:
                     break;
             }
-
+        
             var salary = BASIC_SALARY * years * factor;
 
             return salary;
